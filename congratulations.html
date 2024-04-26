@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Congratulations - 50GB Data Volume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding-right: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .animation {
+            font-size: 24px;
+            color: #007bff;
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="mtndata.jpeg" alt="Congratulations Image" style="max-width: 100%; border-radius: 10px;">
+        <h1>Congratulations!</h1>
+        <p>You have just subscribed to 50GB data volume valid for one month.</p>
+        <p>To start using it, please share this link with 3 of your contacts:</p>
+        <p class="animation" onclick="copyToClipboard()">Click here to copy link, share and automatically get your bundle activated</p>
+        <p id="copyMessage"></p>
+        <p>Once shared, the system will send you the code to activate your data volume.</p>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            var textToCopy = "https://glittery-pudding-a9e416.netlify.app/";
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    document.getElementById("copyMessage").textContent = "Copied!";
+                })
+                .catch(function(error) {
+                    console.error('Error copying text: ', error);
+                });
+        }
+    </script>
+</body>
+</html>
